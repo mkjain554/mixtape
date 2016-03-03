@@ -1,0 +1,23 @@
+@media screen and (max-width: 320px) {
+	.footer{
+		height: 110px;
+	}
+	.footerImg{
+		height: 95px;
+		width: 22%;
+	}
+	.footerData span{
+		display: block;
+		font-size: 9px;
+		margin-top: 0;
+	}
+	btns{
+		margin-top: 0;
+		margin-left: 5px;
+	}
+	platBtns{
+		margin-top: 5px;
+		padding: 17px;
+		margin-left: 5px;
+	}
+}

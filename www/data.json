@@ -1,0 +1,41 @@
+[{
+    id: "1",
+    src: "img/1.jpg",
+    song: "Kartoos"
+}, {
+    id: "2",
+    src: "img/2.jpg",
+    song: "House Party"
+}, {
+    id: "3",
+    src: "img/3.jpg",
+    song: "Repeat"
+}, {
+    id: "4",
+    src: "img/4.jpg",
+    song: "Proper Patola"
+}, {
+    id: "5",
+    src: "img/5.jpg",
+    song: "Internation Villager"
+}, {
+    id: "6",
+    src: "img/6.jpg",
+    song: "Kartoos"
+}, {
+    id: "7",
+    src: "img/7.jpg",
+    song: "Charda Siyal"
+}, {
+    id: "8",
+    src: "img/8.jpg",
+    song: "Galla Mithiyan"
+}, {
+    id: "9",
+    src: "img/9.jpg",
+    song: "Chete Karda"
+}, {
+    id: "10",
+    src: "img/10.jpg",
+    song: "7 Kanalan"
+}]

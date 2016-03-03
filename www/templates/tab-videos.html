@@ -1,0 +1,34 @@
+<ion-view>
+    <ion-content class="padding marginTop" ng-controller="VideosCtrl" ng-init="loadImages()" style="overflow-y:hidden;">
+        <div class="musiclist">
+            <div ng-click="playSelectedItem(image)" ng-repeat="image in images" class="listAlbum" style="background-image:url('{{image.src}}');"></div>
+        </div>
+        <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+
+        <div id="jp_container_1" class="jp-audio " role="application " aria-label="media player ">
+<div class="playingImage">
+    <img ng-src="{{selectedItem.src}}" alt="hello">
+</div>
+            <div class="jp-type-single ">
+                <div class="jp-gui jp-interface ">
+                    <div class="jp-controls ">
+                        <button class="jp-previous " role="button " tabindex="0 ">previous</button>
+                        <button class="jp-play " role="button " tabindex="0 ">play</button>
+                        <button class="jp-next " role="button " tabindex="0 ">next</button>
+                        <button class="jp-stop " role="button " tabindex="0 ">stop</button>
+                    </div>
+
+                    <div class="jp-volume-controls ">
+                        <button class="jp-mute " role="button " tabindex="0 ">mute</button>
+                        <button class="jp-volume-max " role="button " tabindex="0 ">max volume</button>
+                        <div class="jp-volume-bar ">
+                            <div class="jp-volume-bar-value "></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,339 @@
+/* Empty. Add your own CSS if you like */
+
+#pageone {
+    background-image: url('../images/back.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.header {
+    position: fixed;
+    height: 80px;
+    background-color: #0A2246;
+    width: 100%;
+}
+
+.insideHeader i {
+    color: #FFF332;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.insideHeader {
+    margin-top: 30px;
+}
+
+.ui-content {
+    padding: 0;
+}
+
+.menu .menuList {
+    background-color: #0A2246;
+    padding: 15px 0px;
+    text-shadow: 0 0;
+    color: #fff;
+    display: inline-block;
+    margin-right: -6px;
+    font-size: 12px;
+    width: 25.4%;
+    text-align: center;
+}
+
+.menu .menuList:active {
+    border-bottom: 5px solid #FFF332;
+    padding-bottom: 8px;
+    color: yellow;
+}
+
+.musicData {
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.musicFiles img {
+    width: 47%;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    height: 150px;
+    background-color: #0A2246;
+    width: 100%;
+}
+
+.footerImg {
+    width: 30%;
+    height: 130px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    display: inline-block;
+    float: left;
+    background-image: url('../images/cover.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.footerData {
+    width: 64%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 140px;
+    display: inline-block;
+}
+
+.footerData span {
+    display: block;
+    font-size: 12px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    margin-left: 10px;
+    text-shadow: 0 0;
+}
+
+.footerData span:nth-child(1) {
+    color: #FFF332;
+}
+
+.footerData span:nth-child(2) {
+    color: #fff;
+    margin-top: 0;
+}
+
+btns {
+    border: 1px solid #FFF332;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 50%;
+    border-color: #FFF332;
+    margin-top: 20px;
+    color: #FFF332;
+}
+
+platBtns {
+    margin-top: 20px;
+    margin-left: 10px;
+    border: 1px solid #FFF332;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 50%;
+    border-color: #FFF332;
+    color: #FFF332;
+}
+
+btns:active {
+    color: blue;
+    background-color: #FFF332;
+}
+
+platBtns:active {
+    color: blue;
+    background-color: #FFF332;
+}
+
+.listAlbum {
+    display: inline-block !important;
+    padding: 0 !important;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100% !important;
+    height: 178px;
+    background-size: 90%;
+    background-position: 50%;
+    cursor: pointer;
+}
+
+.pane {
+    background-image: url('../img/back.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.tabs a {
+    padding: 16px 0px !important;
+    color: #fff !important;
+    text-shadow: 0 0 !important;
+    background-color: #1A3866 !important;
+    font-size: 12px !important;
+}
+
+.tabs a:active {
+    margin-top: 0px !important;
+}
+
+.tab-item.tab-item-active {
+    border-bottom: 5px solid yellow !important;
+    margin-top: 0px !important;
+}
+
+.tabs-color-active-positive .tabs {
+    margin-top: 25px !important;
+}
+
+.marginTop {
+    margin-top: 15px !important;
+}
+
+.tab-item {
+    opacity: 1 !important;
+}
+
+.headerColor {
+    border-color: #1A3866 !important;
+    background-color: #1A3866 !important;
+}
+
+.backBlue {
+    border-color: #1A3866 !important;
+    background-color: #1A3866 !important;
+}
+
+.yellowColor {
+    color: yellow !important;
+}
+
+.padding4 {
+    padding-top: 4px !important;
+}
+
+
+/*.pane ion-content::-webkit-scrollbar {
+    width: 12px;
+}
+
+.pane ion-content::-webkit-scrollbar-track {
+    background-color: #1A3866;
+    border-left: 1px solid #ccc;
+}
+
+.pane ion-content::-webkit-scrollbar-thumb {
+    background-color: yellow;
+}
+
+.pane ion-content::-webkit-scrollbar-thumb:hover {
+    background-color: yellow;
+}*/
+
+.list {
+    height: 330px;
+}
+
+#content {
+    width: -webkit-max-content;
+    width: max-content;
+}
+
+.item {
+    float: left;
+}
+
+#jp_container_1 {
+    background-color: #1A3866;
+    position: absolute;
+    bottom: 5px;
+    left: auto;
+    right: auto;
+}
+
+.jp-interface {
+    background-color: #1A3866 !;
+}
+
+.playingImage {
+    width: 40%;
+    height: 140px;
+    padding: 10px;
+    display: inline-block;
+    float: left;
+}
+
+.playingImage img {
+    width: 100%;
+}
+
+
+/*
+.jp-state-playing .jp-play {
+    background: url("../img/play-button.png") no-repeat !important;
+    background-size: contain;
+}*/
+
+.jp-audio .jp-interface {
+    height: auto;
+}
+
+.jp-audio .jp-controls {
+    width: auto;
+}
+
+.jp-audio .jp-controls {
+    padding: 20px 5px
+}
+
+.jp-controls button.jp-stop,
+.jp-volume-controls button.jp-volume-max {
+    display: none !important;
+}
+
+.jp-volume-controls {
+    right: 85px;
+    width: auto;
+}
+
+.jp-volume-bar {
+    width: 50px;
+}
+
+.jp-audio {
+    height: 140px;
+}
+
+.playingImage img {
+    width: auto;
+    height: 100%;
+}
+
+.playingImage {
+    height: 100%;
+}
+
+.jp-type-single {
+    width: 60%;
+    float: right;
+    margin-top: 30px;
+}
+
+.bar.bar-stable {
+    border-color: transparent;
+}
+
+.tabs-striped .tabs {
+    border-bottom: 0px solid transparent;
+}
+
+.overflow-scroll {
+    overflow-y: auto;
+}
+
+.scroll {
+    height: 100%;
+}
+
+.slick-slider {
+    margin-top: 10px;
+}
+
+
+/*.headerColor {
+    padding-top: 12px;
+    padding-bottom: 52px;
+}*/
+
+
+/*.bar .title {
+    height: 64px;
+}*/

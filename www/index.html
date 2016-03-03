@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link href="css/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+
+
+
+    <!-- <script type="text/javascript" src="jquery.min.js"></script> -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.jplayer.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+
+
+</head>
+
+<body ng-app="starter">
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <ion-header-bar align-title="left" class="bar-positive headerColor" style="height:50px;">
+        <button class="button icon ion-navicon backBlue yellowColor padding4"></button>
+        <h1 class="title yellowColor padding4">MU</h1>
+        <button class="button icon ion-android-notifications backBlue padding4" style="position: absolute;right: 30px;"></button>
+        <button class="button icon ion-android-search backBlue padding4" style="position: absolute;right: 60px;"></button>
+        <button class="button icon ion-android-search backBlue padding4" style="position: absolute;right: 60px;"></button>
+        <button class="button icon ion-android-more-vertical backBlue yellowColor padding4"></button>
+    </ion-header-bar>
+
+
+
+    <ion-nav-view></ion-nav-view>
+
+
+</body>
+
+</html>
