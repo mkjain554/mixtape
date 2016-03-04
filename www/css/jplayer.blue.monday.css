@@ -260,14 +260,13 @@
 }
 
 .jp-audio .jp-progress {
-    position: absolute;
-    top: 32px;
     height: 15px;
 }
 
 .jp-audio .jp-type-single .jp-progress {
-    left: 110px;
-    width: 186px;
+    width: 95%;
+    margin-top: 25px;
+    border-radius: 7px;
 }
 
 .jp-audio .jp-type-playlist .jp-progress {
@@ -290,7 +289,7 @@
 }
 
 .jp-play-bar {
-    background: url("image/jplayer.blue.monday.jpg") 0 -218px repeat-x;
+    background: url("image/jplayer.blue.monday12.jpg") 0 -218px repeat-x;
     width: 0px;
     height: 100%;
 }
@@ -400,14 +399,10 @@
 
 /* @group current time and duration */
 
-.jp-audio .jp-time-holder {
-    position: absolute;
-    top: 50px;
-}
+.jp-audio .jp-time-holder {}
 
 .jp-audio .jp-type-single .jp-time-holder {
-    left: 110px;
-    width: 186px;
+    width: 95%;
 }
 
 .jp-audio .jp-type-playlist .jp-time-holder {
