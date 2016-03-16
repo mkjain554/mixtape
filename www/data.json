@@ -1,41 +1,331 @@
 [{
-    id: "1",
-    src: "img/1.jpg",
-    song: "Kartoos"
+    "id": "1",
+    "src": "img/1.jpg",
+    "name": "Kartoos",
+    "songs": [
+        {
+            "name": "Istock Audio",
+            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
+        },
+        {
+            "name": "Allegro From Duet Major",
+            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
+        }
+        ,
+        {
+            "name": "Hungarian Dance",
+            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
+        }
+        ,
+        {
+            "name": "Rondeau",
+            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
+        }
+        ,
+        {
+            "name": "Top Irish Washerwoman",
+            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
+        },
+        {
+            "name": "The Entertainer",
+            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
+        }
+    ]
 }, {
-    id: "2",
-    src: "img/2.jpg",
-    song: "House Party"
+    "id": "2",
+    "src": "img/2.jpg",
+    "album": "House Party",
+    "songs": [
+        {
+            "name": "Istock Audio",
+            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
+        },
+        {
+            "name": "Allegro From Duet Major",
+            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
+        }
+        ,
+        {
+            "name": "Hungarian Dance",
+            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
+        }
+        ,
+        {
+            "name": "Rondeau",
+            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
+        }
+        ,
+        {
+            "name": "Top Irish Washerwoman",
+            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
+        },
+        {
+            "name": "The Entertainer",
+            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
+        }
+    ]
 }, {
-    id: "3",
-    src: "img/3.jpg",
-    song: "Repeat"
+    "id": "3",
+    "src": "img/3.jpg",
+    "song": "Repeat",
+    "songs": [
+        {
+            "name": "Istock Audio",
+            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
+        },
+        {
+            "name": "Allegro From Duet Major",
+            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
+        }
+        ,
+        {
+            "name": "Hungarian Dance",
+            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
+        }
+        ,
+        {
+            "name": "Rondeau",
+            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
+        }
+        ,
+        {
+            "name": "Top Irish Washerwoman",
+            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
+        },
+        {
+            "name": "The Entertainer",
+            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
+        }
+    ]
 }, {
-    id: "4",
-    src: "img/4.jpg",
-    song: "Proper Patola"
+    "id": "4",
+    "src": "img/4.jpg",
+    "album": "Proper Patola",
+    "songs": [
+        {
+            "name": "Istock Audio",
+            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
+        },
+        {
+            "name": "Allegro From Duet Major",
+            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
+        }
+        ,
+        {
+            "name": "Hungarian Dance",
+            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
+        }
+        ,
+        {
+            "name": "Rondeau",
+            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
+        }
+        ,
+        {
+            "name": "Top Irish Washerwoman",
+            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
+        },
+        {
+            "name": "The Entertainer",
+            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
+        }
+    ]
 }, {
-    id: "5",
-    src: "img/5.jpg",
-    song: "Internation Villager"
+    "id": "5",
+    "src": "img/5.jpg",
+    "album": "Internation Villager",
+    "songs": [
+        {
+            "name": "Istock Audio",
+            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
+        },
+        {
+            "name": "Allegro From Duet Major",
+            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
+        }
+        ,
+        {
+            "name": "Hungarian Dance",
+            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
+        }
+        ,
+        {
+            "name": "Rondeau",
+            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
+        }
+        ,
+        {
+            "name": "Top Irish Washerwoman",
+            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
+        },
+        {
+            "name": "The Entertainer",
+            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
+        }
+    ]
 }, {
-    id: "6",
-    src: "img/6.jpg",
-    song: "Kartoos"
+    "id": "6",
+    "src": "img/6.jpg",
+    "album": "Kartoos",
+    "songs": [
+        {
+            "name": "Istock Audio",
+            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
+        },
+        {
+            "name": "Allegro From Duet Major",
+            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
+        }
+        ,
+        {
+            "name": "Hungarian Dance",
+            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
+        }
+        ,
+        {
+            "name": "Rondeau",
+            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
+        }
+        ,
+        {
+            "name": "Top Irish Washerwoman",
+            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
+        },
+        {
+            "name": "The Entertainer",
+            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
+        }
+    ]
 }, {
-    id: "7",
-    src: "img/7.jpg",
-    song: "Charda Siyal"
+    "id": "7",
+    "src": "img/7.jpg",
+    "album": "Charda Siyal",
+    "songs": [
+        {
+            "name": "Istock Audio",
+            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
+        },
+        {
+            "name": "Allegro From Duet Major",
+            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
+        }
+        ,
+        {
+            "name": "Hungarian Dance",
+            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
+        }
+        ,
+        {
+            "name": "Rondeau",
+            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
+        }
+        ,
+        {
+            "name": "Top Irish Washerwoman",
+            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
+        },
+        {
+            "name": "The Entertainer",
+            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
+        }
+    ]
 }, {
-    id: "8",
-    src: "img/8.jpg",
-    song: "Galla Mithiyan"
+    "id": "8",
+    "src": "img/8.jpg",
+    "album": "Galla Mithiyan",
+    "songs": [
+        {
+            "name": "Istock Audio",
+            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
+        },
+        {
+            "name": "Allegro From Duet Major",
+            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
+        }
+        ,
+        {
+            "name": "Hungarian Dance",
+            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
+        }
+        ,
+        {
+            "name": "Rondeau",
+            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
+        }
+        ,
+        {
+            "name": "Top Irish Washerwoman",
+            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
+        },
+        {
+            "name": "The Entertainer",
+            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
+        }
+    ]
 }, {
-    id: "9",
-    src: "img/9.jpg",
-    song: "Chete Karda"
+    "id": "9",
+    "src": "img/9.jpg",
+    "album": "Chete Karda",
+    "songs": [
+        {
+            "name": "Istock Audio",
+            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
+        },
+        {
+            "name": "Allegro From Duet Major",
+            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
+        }
+        ,
+        {
+            "name": "Hungarian Dance",
+            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
+        }
+        ,
+        {
+            "name": "Rondeau",
+            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
+        }
+        ,
+        {
+            "name": "Top Irish Washerwoman",
+            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
+        },
+        {
+            "name": "The Entertainer",
+            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
+        }
+    ]
 }, {
-    id: "10",
-    src: "img/10.jpg",
-    song: "7 Kanalan"
+    "id": "10",
+    "src": "img/10.jpg",
+    "album": "7 Kanalan",
+    "songs": [
+        {
+            "name": "Istock Audio",
+            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
+        },
+        {
+            "name": "Allegro From Duet Major",
+            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
+        }
+        ,
+        {
+            "name": "Hungarian Dance",
+            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
+        }
+        ,
+        {
+            "name": "Rondeau",
+            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
+        }
+        ,
+        {
+            "name": "Top Irish Washerwoman",
+            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
+        },
+        {
+            "name": "The Entertainer",
+            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
+        }
+    ]
 }]

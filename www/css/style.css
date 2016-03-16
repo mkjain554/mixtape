@@ -170,9 +170,10 @@ platBtns:active {
     margin-top: 0px !important;
 }
 
-.tabs-color-active-positive .tabs {
+
+/*.tabs-color-active-positive .tabs {
     margin-top: 25px !important;
-}
+}*/
 
 .marginTop {
     margin-top: 15px !important;
@@ -236,18 +237,21 @@ platBtns:active {
     overflow-y: scroll;
 }
 
-.list {
+
+/*.list {
     height: 330px;
-}
+}*/
 
 #content {
     width: -webkit-max-content;
     width: max-content;
 }
 
+
+/*
 .item {
     float: left;
-}
+}*/
 
 #jp_container_1 {
     background-color: #1A3866;
@@ -358,3 +362,26 @@ platBtns:active {
 /*.bar .title {
     height: 64px;
 }*/
+
+.albums .item-content,
+{
+    background: none !important;
+    padding: 146px 49px 16px 16px;
+}
+
+.album-thumb {
+    width: 50%;
+    height: 177px;
+    float: left;
+    padding: 2px;
+}
+
+.hoticon {
+    background-color: none !important;
+}
+
+.colorBlue,
+.colorBlue a {
+    background-color: #1A3866 !important;
+    color: #ffffff;
+}

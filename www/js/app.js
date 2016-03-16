@@ -8,7 +8,7 @@
 var contentHeight = "";
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-.run(function ($ionicPlatform) {
+.run(function ($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function () {
 
         //alert(contentHeight)
@@ -26,6 +26,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
         }
+        $rootScope.allAlbums = [];
+        $rootScope.showTabs = true;
+        
     });
 })
 
@@ -38,7 +41,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     $stateProvider
 
     // setup an abstract state for the tabs directive
-        .state('tab', {
+    /*    .state('tab', {
         url: '/tab',
         abstract: true,
         templateUrl: 'templates/tabs.html'
@@ -84,9 +87,39 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                     controller: 'HostedCtrl'
                 }
             }
+        })
+        .state('albumdetail', {
+            url: '/albumdetail/:id',
+            templateUrl: 'templates/albumdetail.html',
+            controller: 'AlbumDetailCtrl'
+        })*/
+
+        .state('root', {
+            url: '/root',
+            abstract: true,
+            templateUrl: 'templates/main.html'
+        })
+        .state('root.videos', {
+            url: '/videos',
+            views: {
+                'main-content': {
+                    templateUrl: 'templates/tab-videos.html',
+                    controller: 'VideosCtrl'
+                }
+            }
+        })
+        .state('root.videos-single', {
+            url: '/videos-single/:id',
+            views: {
+                'main-content': {
+                    templateUrl: 'templates/albumdetail.html',
+                    controller: 'AlbumDetailCtrl'
+                }
+            }
         });
 
+
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/videos');
+    $urlRouterProvider.otherwise('/root/videos');
 
 });

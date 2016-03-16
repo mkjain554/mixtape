@@ -1,0 +1,20 @@
+<ion-view>
+    <ion-content class="padding marginTop">
+        <div class="list card">
+            <div class="item">
+                <h2>{{selectedAlbumVar.album}}</h2>
+            </div>
+
+            <div class="item item-body">
+                <img class="full-image" ng-src="{{selectedAlbumVar.src}}">
+                <ion-list>
+                    <ion-item ng-repeat="song in selectedAlbumVar.songs" class="item-button-right" ng-click="playSong(song.url)" style="padding-right: 10px;">
+                        <div>{{song.name}}<img src="img/arrows.png" style="float:right" /></div>
+
+                    </ion-item>
+                </ion-list>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>
