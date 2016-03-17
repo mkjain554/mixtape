@@ -257,8 +257,14 @@ platBtns:active {
     background-color: #1A3866;
     position: absolute;
     bottom: 5px;
-    left: auto;
-    right: auto;
+    left: -10px;
+    height: 90px;
+    bottom: -10px;
+    width: 107%;
+}
+
+.jp-audio .jp-type-single .jp-progress {
+    margin-top: 10px;
 }
 
 .jp-interface {

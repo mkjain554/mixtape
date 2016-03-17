@@ -1,0 +1,13 @@
+<ion-view>
+    <ion-content class="padding marginTop animated slideInUp">
+        <a class="button button-icon icon ion-close-round" ng-click="closeView()"></a>
+        <div class="list card">
+            <div class="item">
+                <h2>{{selectedAlbumVar.album}}</h2>
+            </div>
+            <div class="item item-body">
+                <img class="full-image" ng-src="{{selectedAlbumVar.src}}">
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

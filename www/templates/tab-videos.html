@@ -1,15 +1,17 @@
 <ion-view>
     <ion-content class="padding marginTop" ng-class="{'has-header has-tabs-top': androidPlatform, 'has-header has-tabs': iosPlatform}" ng-controller="VideosCtrl" ng-init="loadAlbums()" style="overflow-y:hidden;">
-        <ion-scroll direction="y" style="height: calc(100% - 150px);">
+        <ion-scroll direction="y" style="height: calc(100% - 95px);">
             <!--<div style="height: 385px;overflow-y:scroll;">-->
             <a ng-click="selectedAlbum(album)" class="albums album-thumb" ng-repeat="album in albums" href="#/root/videos-single/{{album.id}}">
                 <img ng-src="{{album.src}}" alt="{{album.src}}" style="width:100%;height:100%;">
             </a>
             <!--</div>-->
         </ion-scroll>
+
         <div id="player">
             <div id="jquery_jplayer_1" class="jp-jplayer"></div>
             <div id="jp_container_1" class="jp-audio " role="application " aria-label="media player ">
+                <!--on-touch="onTouch()"-->
                 <div class="playingImage">
                     <img ng-src="{{selectedAlbumVar.src}}" alt="hello">
                 </div>
@@ -29,7 +31,7 @@
                         </div>
 -->
                         </div>
-                        <div class="jp-controls " style="padding:20px 45px;width:100%">
+                        <div class="jp-controls " style="padding:0px 45px;width:100%">
                             <button class="jp-previous " role="button " tabindex="0 ">previous</button>
                             <button class="jp-play " role="button " tabindex="0 ">play</button>
                             <button class="jp-next " role="button " tabindex="0 ">next</button>

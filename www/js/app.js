@@ -28,7 +28,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
         $rootScope.allAlbums = [];
         $rootScope.showTabs = true;
-        
+
     });
 })
 
@@ -39,61 +39,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     // Set up the various states which the app can be in.
     // Each state's controller can be found in controllers.js
     $stateProvider
-
-    // setup an abstract state for the tabs directive
-    /*    .state('tab', {
-        url: '/tab',
-        abstract: true,
-        templateUrl: 'templates/tabs.html'
-    })
-
-    // Each tab has its own nav history stack:
-
-    .state('tab.videos', {
-        url: '/videos',
-        views: {
-            'tab-videos': {
-                templateUrl: 'templates/tab-videos.html',
-                controller: 'VideosCtrl'
-            }
-        }
-    })
-
-
-    .state('tab.new-music', {
-        url: '/newMusic',
-        views: {
-            'tab-new-music': {
-                templateUrl: 'templates/new-music.html',
-                controller: 'NewMusicCtrl'
-            }
-        }
-    })
-
-    .state('tab.all', {
-            url: '/all',
-            views: {
-                'tab-all': {
-                    templateUrl: 'templates/tab-all.html',
-                    controller: 'AllCtrl'
-                }
-            }
-        })
-        .state('tab.hosted', {
-            url: '/hosted',
-            views: {
-                'tab-hosted': {
-                    templateUrl: 'templates/tab-hosted.html',
-                    controller: 'HostedCtrl'
-                }
-            }
-        })
-        .state('albumdetail', {
-            url: '/albumdetail/:id',
-            templateUrl: 'templates/albumdetail.html',
-            controller: 'AlbumDetailCtrl'
-        })*/
-
         .state('root', {
             url: '/root',
             abstract: true,
@@ -116,6 +61,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                     controller: 'AlbumDetailCtrl'
                 }
             }
+        })
+        .state('currentsong', {
+            url: "/currentsong",
+            templateUrl: 'templates/currentsong.html',
+            controller: 'CurrentSongCtrl'
         });
 
 

@@ -243,7 +243,12 @@ var jsonData = [
 
 angular.module('starter.controllers', [])
     .controller('RootCtrl', function ($scope) {})
-    .controller('VideosCtrl', function ($scope, $http, allAlbums, $rootScope) {
+    .controller('VideosCtrl', function ($scope, $http, allAlbums, $rootScope, $state) {
+
+        $scope.onTouch = function () {
+            $state.go("currentsong");
+        }
+
 
         $rootScope.showTabs = true;
         $scope.androidPlatform = ionic.Platform.isAndroid();
@@ -253,6 +258,7 @@ angular.module('starter.controllers', [])
             $scope.albums = jsonData;
             $rootScope.allAlbums = jsonData;
             $scope.selectedAlbumVar = $scope.albums[0];
+            $rootScope.selectedAlbumVar = $scope.albums[0];
             /*allAlbums.getAllAlbums().success(function (response) {
                 $scope.albums = response
                 $rootScope.allAlbums = response;
@@ -295,23 +301,30 @@ angular.module('starter.controllers', [])
 
         $scope.selectedAlbum = function (item) {
             $scope.selectedAlbumVar = item;
+            $rootScope.selectedAlbumVar = item;
         }
     })
-
-.controller('NewMusicCtrl', function ($scope) {})
+    .controller('NewMusicCtrl', function ($scope) {})
 
 .controller('AllCtrl', function ($scope, $stateParams) {})
 
 .controller('HostedCtrl', function ($scope) {})
 
 .controller('AlbumDetailCtrl', function ($scope, $state, $rootScope) {
-    var albumid = $state.params.id;
-    for (var i = 0; i < $rootScope.allAlbums.length; i++) {
-        if ($rootScope.allAlbums[i].id == albumid) {
-            $scope.selectedAlbumVar = $rootScope.allAlbums[i];
+        var albumid = $state.params.id;
+        for (var i = 0; i < $rootScope.allAlbums.length; i++) {
+            if ($rootScope.allAlbums[i].id == albumid) {
+                $scope.selectedAlbumVar = $rootScope.allAlbums[i];
+            }
         }
-    }
-    $scope.playSong = function (url) {
+        $scope.playSong = function (url) {
 
-    }
-});
+        }
+    })
+    .controller('CurrentSongCtrl', function ($scope, $rootScope, $ionicHistory) {
+        alert($rootScope.selectedAlbumVar);
+        $scope.selectedAlbumVar = $rootScope.selectedAlbumVar;
+        $scope.closeView = function () {
+            $ionicHistory.goBack();
+        }
+    });
