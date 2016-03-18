@@ -39,10 +39,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     // Set up the various states which the app can be in.
     // Each state's controller can be found in controllers.js
     $stateProvider
-        .state('root', {
+        .state('login', {
+            url: '/login',
+            templateUrl: 'templates/login.html',
+            controller: 'LoginCtrl'
+        })
+
+    .state('root', {
             url: '/root',
             abstract: true,
-            templateUrl: 'templates/main.html'
+            templateUrl: 'templates/main.html',
+            controller:"RootCtrl"
         })
         .state('root.videos', {
             url: '/videos',
@@ -70,6 +77,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/root/videos');
+    $urlRouterProvider.otherwise('/login');
 
 });

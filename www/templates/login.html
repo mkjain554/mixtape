@@ -1,0 +1,72 @@
+<ion-view class="back">
+    <ion-content class="padding">
+        <img src="img/logo.png" class="logoImage">
+        <div class="container-fluid margin0padding0">
+            <div class="row margin0padding0">
+                <div class="col-md-12 col-md-offset-3 margin0padding0" style="width:100%;">
+                    <div class="panel panel-login" style="margin-top:10%;">
+                        <div class="panel-heading">
+                            <div class="row" style="margin:0;">
+                                <div class="col-xs-6">
+                                    <a href="#" class="active" ng-class="{'active':loginform}" ng-click="showLogin()">Login</a>
+                                </div>
+                                <div class="col-xs-6">
+                                    <a href="#" ng-click="showRegister()" ng-class="{'active':registerform}">Register</a>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="panel-body ">
+                            <div class="row margin0padding0">
+                                <div class="col-lg-12" style="width:100%;">
+                                    <div ng-show="loginform">
+                                        <div class="form-group">
+                                            <input type="text" ng-class="{'border-outline':error.username}" ng-model="loginData.username" name="username" id="pannelUsernameLogin" tabindex="1" class="form-control" placeholder="Username" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" ng-class="{'border-outline':error.password}" ng-model="loginData.password" name="password" id="pannelPasswordLogin" tabindex="2" class="form-control" placeholder="Password">
+                                        </div>
+                                        <div class="form-group text-center">
+                                            <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                            <label for="remember"> Remember Me</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row" style="margin:0">
+                                                <div class="col-sm-6 col-sm-offset-3" style="margin:0px auto;">
+                                                    <button ng-click="login()" tabindex="4" class=" loginBtn form-control ">Log In</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="facebook-sign-in button button-block" ng-click="facebookSignIn()">Login with Facebook</a>
+
+                                    </div>
+                                    <div ng-show="registerform">
+                                        <div class="form-group">
+                                            <input type="text" name="username" id="pannelRegisterUsername" tabindex="1" class="form-control" placeholder="Username" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" name="email" id="pannelRegisterEmail" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" name="password" id="pannelRegisterPassword" tabindex="2" class="form-control" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" name="confirm-password" id="pannelRegisterconfirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row" style="margin:0">
+                                                <div class="col-sm-6 col-sm-offset-3" style="margin:0px auto;">
+                                                    <input type="submit" id="register-submit" tabindex="4" class="form-control loginBtn" value="Register Now">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
