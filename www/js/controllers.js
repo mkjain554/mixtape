@@ -1,247 +1,4 @@
-var jsonData = [
-    {
-        "id": "1",
-        "src": "img/1.jpg",
-        "album": "Kartoos",
-        "songs": [{
-            "name": "Istock Audio",
-            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
-    }, {
-            "name": "Allegro From Duet Major",
-            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
-    }, {
-            "name": "Hungarian Dance",
-            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
-    }, {
-            "name": "Rondeau",
-            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
-    }, {
-            "name": "Top Irish Washerwoman",
-            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
-    }, {
-            "name": "The Entertainer",
-            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
-    }]
-},
-    {
-        "id": "2",
-        "src": "img/2.jpg",
-        "album": "House Party",
-        "songs": [{
-            "name": "Istock Audio",
-            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
-    }, {
-            "name": "Allegro From Duet Major",
-            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
-    }, {
-            "name": "Hungarian Dance",
-            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
-    }, {
-            "name": "Rondeau",
-            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
-    }, {
-            "name": "Top Irish Washerwoman",
-            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
-    }, {
-            "name": "The Entertainer",
-            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
-    }]
-},
-    {
-        "id": "3",
-        "src": "img/3.jpg",
-        "song": "Repeat",
-        "songs": [{
-            "name": "Istock Audio",
-            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
-    }, {
-            "name": "Allegro From Duet Major",
-            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
-    }, {
-            "name": "Hungarian Dance",
-            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
-    }, {
-            "name": "Rondeau",
-            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
-    }, {
-            "name": "Top Irish Washerwoman",
-            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
-    }, {
-            "name": "The Entertainer",
-            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
-    }]
-},
-    {
-        "id": "4",
-        "src": "img/4.jpg",
-        "album": "Proper Patola",
-        "songs": [{
-            "name": "Istock Audio",
-            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
-    }, {
-            "name": "Allegro From Duet Major",
-            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
-    }, {
-            "name": "Hungarian Dance",
-            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
-    }, {
-            "name": "Rondeau",
-            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
-    }, {
-            "name": "Top Irish Washerwoman",
-            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
-    }, {
-            "name": "The Entertainer",
-            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
-    }]
-},
-    {
-        "id": "5",
-        "src": "img/5.jpg",
-        "album": "Internation Villager",
-        "songs": [{
-            "name": "Istock Audio",
-            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
-    }, {
-            "name": "Allegro From Duet Major",
-            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
-    }, {
-            "name": "Hungarian Dance",
-            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
-    }, {
-            "name": "Rondeau",
-            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
-    }, {
-            "name": "Top Irish Washerwoman",
-            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
-    }, {
-            "name": "The Entertainer",
-            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
-    }]
-},
-    {
-        "id": "6",
-        "src": "img/6.jpg",
-        "album": "Kartoos",
-        "songs": [{
-            "name": "Istock Audio",
-            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
-    }, {
-            "name": "Allegro From Duet Major",
-            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
-    }, {
-            "name": "Hungarian Dance",
-            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
-    }, {
-            "name": "Rondeau",
-            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
-    }, {
-            "name": "Top Irish Washerwoman",
-            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
-    }, {
-            "name": "The Entertainer",
-            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
-    }]
-},
-    {
-        "id": "7",
-        "src": "img/7.jpg",
-        "album": "Charda Siyal",
-        "songs": [{
-            "name": "Istock Audio",
-            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
-    }, {
-            "name": "Allegro From Duet Major",
-            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
-    }, {
-            "name": "Hungarian Dance",
-            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
-    }, {
-            "name": "Rondeau",
-            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
-    }, {
-            "name": "Top Irish Washerwoman",
-            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
-    }, {
-            "name": "The Entertainer",
-            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
-    }]
-},
-    {
-        "id": "8",
-        "src": "img/8.jpg",
-        "album": "Galla Mithiyan",
-        "songs": [{
-            "name": "Istock Audio",
-            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
-    }, {
-            "name": "Allegro From Duet Major",
-            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
-    }, {
-            "name": "Hungarian Dance",
-            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
-    }, {
-            "name": "Rondeau",
-            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
-    }, {
-            "name": "Top Irish Washerwoman",
-            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
-    }, {
-            "name": "The Entertainer",
-            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
-    }]
-},
-    {
-        "id": "9",
-        "src": "img/9.jpg",
-        "album": "Chete Karda",
-        "songs": [{
-            "name": "Istock Audio",
-            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
-    }, {
-            "name": "Allegro From Duet Major",
-            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
-    }, {
-            "name": "Hungarian Dance",
-            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
-    }, {
-            "name": "Rondeau",
-            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
-    }, {
-            "name": "Top Irish Washerwoman",
-            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
-    }, {
-            "name": "The Entertainer",
-            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
-    }]
-},
-    {
-        "id": "10",
-        "src": "img/10.jpg",
-        "album": "7 Kanalan",
-        "songs": [{
-            "name": "Istock Audio",
-            "url": "https://en-support.files.wordpress.com/2014/10/istock_audio.wav"
-    }, {
-            "name": "Allegro From Duet Major",
-            "url": "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
-    }, {
-            "name": "Hungarian Dance",
-            "url": "http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3"
-    }, {
-            "name": "Rondeau",
-            "url": "http://www.stephaniequinn.com/Music/Rondeau.mp3"
-    }, {
-            "name": "Top Irish Washerwoman",
-            "url": "http://www.stephaniequinn.com/Music/The%20Irish%20Washerwoman.mp3"
-    }, {
-            "name": "The Entertainer",
-            "url": "http://www.stephaniequinn.com/Music/The%20Entertainer.mp3"
-    }]
-}
-               ]
-
-angular.module('starter.controllers', ['ngLoadingSpinner'])
+angular.module('starter.controllers', ['ngLoadingSpinner', 'ngCordova'])
     .controller('RootCtrl', function ($scope, $state) {
         $scope.logout = function () {
             $state.go("login", {
@@ -250,50 +7,61 @@ angular.module('starter.controllers', ['ngLoadingSpinner'])
         }
 
     })
-    .controller('VideosCtrl', function ($scope, $http, allAlbums, $rootScope, $state) {
-
+    .controller('VideosCtrl', function ($scope, $http, $rootScope, $state, allAlbums) {
         $scope.onTouch = function () {
             $state.go("currentsong");
         }
+        $scope.pageNumber = 0;
+        $scope.noMoreItemsAvailable = false;
 
+        function populateAlbums(page, type, callback) {
+            var promise = allAlbums.getAllAlbums(page, type);
+            promise.then(function (response) {
+                if (response && response.data && response.data.data) {
+                    callback(response.data.data);
+                } else {
+                    $scope.noMoreItemsAvailable = true;
+                }
+            })
+        }
 
         $rootScope.showTabs = true;
         $scope.androidPlatform = ionic.Platform.isAndroid();
         $scope.iosPlatform = ionic.Platform.isIOS();
         $scope.albums = [];
-        $scope.loadAlbums = function () {
-            $scope.albums = jsonData;
-            $rootScope.allAlbums = jsonData;
-            $scope.selectedAlbumVar = $scope.albums[0];
-            $rootScope.selectedAlbumVar = $scope.albums[0];
-            /*allAlbums.getAllAlbums().success(function (response) {
-                $scope.albums = response
-                $rootScope.allAlbums = response;
-                $scope.selectedItem = $scope.albums[0];
-                alert("selecteeditem", $scope.selectedItem);
-            }).error(function (err) {
-                alert("err.." + err);
-            })*/
-        }
-        setTimeout(function () {
-            $("#jquery_jplayer_1").jPlayer({
-                ready: function (event) {
-                    $(this).jPlayer("setMedia", {
-                        title: "Bubble",
-                        mp3: "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
-                    });
-                },
-                //swfPath: "../../dist/jplayer",
-                supplied: "m4a, oga",
-                wmode: "window",
-                useStateClassSkin: true,
-                autoBlur: false,
-                smoothPlayBar: true,
-                keyEnabled: true,
-                remainingDuration: true,
-                toggleDuration: true
+        $scope.loadMore = function () {
+            $scope.pageNumber = $scope.pageNumber + 1;
+            populateAlbums($scope.pageNumber, "a", function (data) {
+                $scope.albums = $scope.albums.concat(data);
+                $scope.allAlbums = $scope.allAlbums.concat(data);
+                $scope.$broadcast('scroll.infiniteScrollComplete');
+                if ($scope.pageNumber == 1) {
+                    $scope.selectedAlbumVar = $scope.albums[0];
+                    $rootScope.selectedAlbumVar = $scope.albums[0];
+                }
             });
-        }, 0);
+        };
+
+
+        /*setTimeout(function () {
+    $("#jquery_jplayer_1").jPlayer({
+        ready: function (event) {
+            $(this).jPlayer("setMedia", {
+                title: "Bubble",
+                mp3: "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
+            });
+        },
+        //swfPath: "../../dist/jplayer",
+        supplied: "m4a, oga",
+        wmode: "window",
+        useStateClassSkin: true,
+        autoBlur: false,
+        smoothPlayBar: true,
+        keyEnabled: true,
+        remainingDuration: true,
+        toggleDuration: true
+    });
+}, 0);*/
         setTimeout(function () {
             var windowHeight = $(window).height();
             var playerHeight = 140;
@@ -303,8 +71,6 @@ angular.module('starter.controllers', ['ngLoadingSpinner'])
             var contentHeight = windowHeight - (playerHeight + headerHeight + tabHeight + centerHeight);
             $(".musiclist").height(contentHeight);
         }, 0)
-
-
 
         $scope.selectedAlbum = function (item) {
             $scope.selectedAlbumVar = item;
@@ -317,15 +83,40 @@ angular.module('starter.controllers', ['ngLoadingSpinner'])
 
 .controller('HostedCtrl', function ($scope) {})
 
-.controller('AlbumDetailCtrl', function ($scope, $state, $rootScope) {
+.controller('AlbumDetailCtrl', function ($scope, $state, $rootScope, albumDetail, $cordovaMedia, $ionicLoading) {
         var albumid = $state.params.id;
         for (var i = 0; i < $rootScope.allAlbums.length; i++) {
             if ($rootScope.allAlbums[i].id == albumid) {
                 $scope.selectedAlbumVar = $rootScope.allAlbums[i];
             }
         }
-        $scope.playSong = function (url) {
+        var promise = albumDetail.getAlbumDetail(1, albumid);
+        promise.then(function (response) {
+            if (response && response.data && response.data.data) {
+                $scope.selectedAlbumVar.songs = response.data.data;
+            }
+            console.log("$scope.selectedAlubmvar.." + JSON.stringify($scope.selectedAlbumVar));
+        })
 
+        var mediaStatusCallback = function (status) {
+            if (status == 1) {
+                $ionicLoading.show({
+                    template: 'Loading...'
+                });
+            } else {
+                $ionicLoading.hide();
+            }
+        }
+        $scope.playSong = function (src, index) {
+            console.log("index.." + index);
+            if (index == 1) {
+                var src = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2013.mp3";
+            } else {
+                console.log("src.." + src);
+                var src1 = src;
+            }
+            var media = new Media(src, null, null, mediaStatusCallback);
+            media.play();
         }
     })
     .controller('CurrentSongCtrl', function ($scope, $rootScope, $ionicHistory) {
@@ -335,7 +126,7 @@ angular.module('starter.controllers', ['ngLoadingSpinner'])
             $ionicHistory.goBack();
         }
     })
-    .controller('LoginCtrl', function ($scope, $http, usSpinnerService, $state, $q, $ionicLoading, UserService) {
+    .controller('LoginCtrl', function ($scope, $http, usSpinnerService, $state, $q, $ionicLoading, UserService, loginService, registerService, $rootScope) {
         $scope.loginData = {
             username: '',
             password: ''
@@ -343,6 +134,17 @@ angular.module('starter.controllers', ['ngLoadingSpinner'])
         $scope.error = {
             username: false,
             password: false
+        };
+        $scope.registerData = {
+            email: '',
+            password: '',
+            cpassword: ''
+        };
+        $scope.registererror = {
+            email: false,
+            password: false,
+            cpassword: false,
+            invalidemail: false
         };
         $scope.loginform = true;
         $scope.showLogin = function () {
@@ -354,40 +156,86 @@ angular.module('starter.controllers', ['ngLoadingSpinner'])
             $scope.loginform = false;
         }
         $scope.login = function () {
-                if ($scope.loginData.username.length == 0 || $scope.loginData.password == 0) {
-                    $scope.error = {
-                        username: false,
-                        password: false
+            if ($scope.loginData.username.length == 0 || $scope.loginData.password == 0) {
+                $scope.error = {
+                    username: false,
+                    password: false
+                };
+                if ($scope.loginData.username.length == 0) {
+                    $scope.error.username = true;
+                }
+                if ($scope.loginData.password.length == 0) {
+                    $scope.error.password = true;
+                }
+                return;
+            } else {
+                $scope.error = {
+                    username: false,
+                    password: false
+                };
+            }
+            var loginUrl = "http://mixtapeupload.net/webservices/signin.php";
+            usSpinnerService.spin('spinner-1');
+            loginService.login($scope.loginData.username, $scope.loginData.password).success(function (response) {
+                console.log("response.data." + JSON.stringify(response.data));
+                if (response && response.data) {
+                    $scope.loginData = {
+                        username: '',
+                        password: ''
                     };
-                    if ($scope.loginData.username.length == 0) {
-                        $scope.error.username = true;
+                    $rootScope.user = response.data;
+                    $state.go("root.videos");
+                    return;
+                }
+            }).error(function (error) {
+                alert(error);
+            })
+
+        }
+
+        $scope.register = function () {
+                if ($scope.registerData.email.length > 0) {
+                    var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+                    console.log(re.test($scope.registerData.email));
+                    if (!re.test($scope.registerData.email)) {
+                        $scope.registererror.invalidemail = true;
+                        $scope.registererror.email = true;
+                    } else {
+                        $scope.registererror.invalidemail = false;
+                        $scope.registererror.email = false;
                     }
-                    if ($scope.loginData.password.length == 0) {
-                        $scope.error.password = true;
+                } else {
+                    $scope.registererror.email = true;
+                }
+                if ($scope.registerData.password == 0 || $scope.registerData.cpassword == 0) {
+                    if ($scope.registerData.password.length == 0) {
+                        $scope.registererror.password = true;
+                    }
+                    if ($scope.registerData.cpassword.length == 0) {
+                        $scope.registererror.cpassword = true;
                     }
                     return;
                 } else {
-                    $scope.error = {
-                        username: false,
-                        password: false
+                    $scope.registererror = {
+                        email: false,
+                        password: false,
+                        cpassword: false
                     };
                 }
-                var loginUrl = "http://mixtapeupload.net/webservices/signin.php";
+
                 usSpinnerService.spin('spinner-1');
-                /*$http.post(loginUrl, {
-                    email: $scope.loginData.username,
-                    password: $scope.loginData.password
-                }).success(function (response) {
-                    alert(response);
-                }).error(function (error) {
-                    alert(error);
-                })*/
-                $scope.loginData = {
-                    username: '',
-                    password: ''
-                };
-                $state.go("root.videos");
-                return;
+                var promise = registerService.register($scope.registerData.email, $scope.registerData.password, $scope.registerData.cpassword);
+                promise.then(function (response) {
+                    if (response && response.data) {
+                        $scope.registerData = {
+                            email: '',
+                            password: '',
+                            cpassword: ''
+                        };
+                        $state.go("root.login");
+                        return;
+                    }
+                });
             }
             // This is the success callback from the login method
         var fbLoginSuccess = function (response) {

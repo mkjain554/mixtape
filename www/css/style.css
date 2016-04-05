@@ -148,17 +148,7 @@ platBtns:active {
 }
 
 .pane {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,207cca+0,194373+0,7db9e8+100 */
-    background: #1e5799;
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #7db9e8 0%, #194373 0%, #207cca 0%, #1e5799 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #7db9e8 0%, #194373 0%, #207cca 0%, #1e5799 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #7db9e8 0%, #194373 0%, #207cca 0%, #1e5799 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8', GradientType=0);
-    /* IE6-9 */
+    background-image: url("../img/back.jpg");
 }
 
 .tabs a {
@@ -184,7 +174,7 @@ platBtns:active {
 }*/
 
 .marginTop {
-    margin-top: 15px !important;
+    margin-top: -8px !important;
 }
 
 .tab-item {
@@ -265,10 +255,11 @@ platBtns:active {
     background-color: #1A3866;
     position: absolute;
     bottom: 5px;
-    left: -10px;
+    margin-left: -2px;
+    margin-right: -2px;
     height: 90px;
     bottom: -10px;
-    width: 107%;
+    width: 102%;
 }
 
 .jp-audio .jp-type-single .jp-progress {
@@ -402,4 +393,8 @@ platBtns:active {
 
 .border-outline {
     border: 1px solid red !important;
+}
+
+.fullImage.item-complex .item-content {
+    padding: 0px;
 }

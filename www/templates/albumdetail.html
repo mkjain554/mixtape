@@ -2,14 +2,14 @@
     <ion-content class="padding marginTop">
         <div class="list card">
             <div class="item">
-                <h2>{{selectedAlbumVar.album}}</h2>
+                <h2>{{selectedAlbumVar.albums_name}}</h2>
             </div>
 
             <div class="item item-body">
-                <img class="full-image" ng-src="{{selectedAlbumVar.src}}">
+                <img class="full-image" ng-src="{{selectedAlbumVar.al_image_url}}">
                 <ion-list>
-                    <ion-item ng-repeat="song in selectedAlbumVar.songs" class="item-button-right" ng-click="playSong(song.url)" style="padding-right: 10px;">
-                        <div>{{song.name}}<img src="img/arrows.png" style="float:right" /></div>
+                    <ion-item ng-repeat="song in selectedAlbumVar.songs" class="item-button-right" ng-click="playSong(song.song_url,$index)" style="padding-right: 10px;">
+                        <div>{{song.song_name}}<img src="img/arrows.png" style="float:right" /></div>
 
                     </ion-item>
                 </ion-list>

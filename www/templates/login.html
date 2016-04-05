@@ -37,26 +37,24 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <a class="facebook-sign-in button button-block" ng-click="facebookSignIn()">Login with Facebook</a>
+                                        <!--<a class="facebook-sign-in button button-block" ng-click="facebookSignIn()">Login with Facebook</a>-->
 
                                     </div>
                                     <div ng-show="registerform">
                                         <div class="form-group">
-                                            <input type="text" name="username" id="pannelRegisterUsername" tabindex="1" class="form-control" placeholder="Username" value="">
+                                            <input type="text" ng-class="{'border-outline':registererror.email}" ng-model="registerData.email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                                            <span ng-show="registererror.invalidemail">Please enter a valid email address</span>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email" id="pannelRegisterEmail" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                                            <input type="password" name="password" ng-class="{'border-outline':registererror.password}" ng-model="registerData.password" id="pannelRegisterPassword" tabindex="2" class="form-control" placeholder="Password">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" id="pannelRegisterPassword" tabindex="2" class="form-control" placeholder="Password">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" name="confirm-password" id="pannelRegisterconfirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                                            <input type="password" name="confirm-password" ng-class="{'border-outline':registererror.cpassword}" ng-model="registerData.cpassword" id="pannelRegisterconfirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="row" style="margin:0">
                                                 <div class="col-sm-6 col-sm-offset-3" style="margin:0px auto;">
-                                                    <input type="submit" id="register-submit" tabindex="4" class="form-control loginBtn" value="Register Now">
+                                                    <button tabindex="4" ng-click="register()" class="form-control loginBtn">Register Now</button>
                                                 </div>
                                             </div>
                                         </div>

@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    angular.module('starter.services', []).factory('allAlbums', allAlbums);
+    angular.module('starter').factory('allAlbums', allAlbums);
     allAlbums.$inject = ['$http'];
 
     function allAlbums($http) {
@@ -8,17 +8,86 @@
             getAllAlbums: getAllAlbums
         };
 
-        function getAllAlbums() {
-            return $http({
-                    method: "GET",
-                    url: "../data.json"
-                })
+        function getAllAlbums(page, type) {
+
+            return $http.get("http://mixtapeupload.net/webservices/get_albums.php?page=" + page + "&type=" + type)
                 .success(function (res, status, headers, config) {
-                    alert("response" + res);
-                    return res;
+                    return res.data;
                 })
                 .error(function (res, status, headers, config) {
-                    alert("err" + JSON.stringify(res));
+                    return res;
+                });
+        }
+    }
+})();
+(function () {
+    "use strict";
+    angular.module('starter').factory('albumDetail', albumDetail);
+    albumDetail.$inject = ['$http'];
+
+    function albumDetail($http) {
+        return {
+            getAlbumDetail: getAlbumDetail
+        };
+
+        function getAlbumDetail(page, songid) {
+
+            return $http({
+                    method: "GET",
+                    url: "http://mixtapeupload.net/webservices/get_songs.php?page=" + page + "&al_id=" + songid
+                })
+                .success(function (res, status, headers, config) {
+                    return res.data;
+                })
+                .error(function (res, status, headers, config) {
+                    return res;
+                });
+        }
+    }
+})();
+(function () {
+    "use strict";
+    angular.module('starter').factory('loginService', login);
+    login.$inject = ['$http'];
+
+    function login($http) {
+        return {
+            login: login
+        };
+
+        function login(email, password) {
+            return $http({
+                    method: "GET",
+                    url: "http://mixtapeupload.net/webservices/signin.php?email=" + email + "&password=" + password
+                })
+                .success(function (res, status, headers, config) {
+                    return res.data;
+                })
+                .error(function (res, status, headers, config) {
+                    return res;
+                });
+        }
+    }
+})();
+(function () {
+    "use strict";
+    angular.module('starter').factory('registerService', register);
+    register.$inject = ['$http'];
+
+    function register($http) {
+        return {
+            register: register
+        };
+
+        function register(email, password, cpassword) {
+            return $http({
+                    method: "GET",
+                    url: "http://mixtapeupload.net/webservices/register.php?email=" + email + "&password=" + password + "&cpassword=" + cpassword
+                })
+                .success(function (res, status, headers, config) {
+                    return res.data;
+                })
+                .error(function (res, status, headers, config) {
                     return res;
                 });
         }

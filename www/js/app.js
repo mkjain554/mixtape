@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 var contentHeight = "";
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngAudio'])
 
 .run(function ($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function () {
@@ -39,17 +39,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     // Set up the various states which the app can be in.
     // Each state's controller can be found in controllers.js
     $stateProvider
-        .state('login', {
-            url: '/login',
-            templateUrl: 'templates/login.html',
-            controller: 'LoginCtrl'
-        })
 
-    .state('root', {
+
+        .state('root', {
             url: '/root',
             abstract: true,
             templateUrl: 'templates/main.html',
-            controller:"RootCtrl"
+            controller: "RootCtrl"
+        })
+        .state('root.login', {
+            url: '/login',
+            views: {
+                'main-content': {
+                    templateUrl: 'templates/login.html',
+                    controller: 'LoginCtrl'
+                }
+            }
         })
         .state('root.videos', {
             url: '/videos',
@@ -77,6 +82,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/root/videos');
 
 });

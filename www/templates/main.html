@@ -21,14 +21,17 @@
         </ion-header-bar>
         <ion-content has-header="true" class="colorBlue">
             <ion-list>
-                <ion-item ui-sref="root.videos" ng-click="toggleLeft()">
+                <ion-item menu-close ui-sref="root.videos">
                     Coming Soon
                 </ion-item>
-                <ion-item ui-sref="root.videos" ng-click="toggleLeft()">
+                <ion-item menu-close ui-sref="root.videos">
                     Videos
                 </ion-item>
-                <ion-item ui-sref="root.videos" ng-click="toggleLeft()">
+                <ion-item menu-close ui-sref="root.videos">
                     My Playlist
+                </ion-item>
+                <ion-item menu-close ui-sref="root.login">
+                    Login
                 </ion-item>
                 <ion-item ng-click="logout()">
                     Log Out
