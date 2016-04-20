@@ -65,6 +65,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 }
             }
         })
+        .state('root.hot', {
+            url: '/hot',
+            views: {
+                'main-content': {
+                    templateUrl: 'templates/tab-hot.html',
+                    controller: 'HotCtrl'
+                }
+            }
+        })
         .state('root.videos-single', {
             url: '/videos-single/:id',
             views: {

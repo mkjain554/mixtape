@@ -27,7 +27,9 @@
 
     function albumDetail($http) {
         return {
-            getAlbumDetail: getAlbumDetail
+            getAlbumDetail: getAlbumDetail,
+            markFavourite: markFavourite,
+            unMarkFavourite: unMarkFavourite
         };
 
         function getAlbumDetail(page, songid) {
@@ -35,6 +37,32 @@
             return $http({
                     method: "GET",
                     url: "http://mixtapeupload.net/webservices/get_songs.php?page=" + page + "&al_id=" + songid
+                })
+                .success(function (res, status, headers, config) {
+                    return res.data;
+                })
+                .error(function (res, status, headers, config) {
+                    return res;
+                });
+        }
+
+        function markFavourite(song, user_id) {
+            return $http({
+                    method: "GET",
+                    url: "http://mixtapeupload.net/webservices/add_single_favorite.php?song_id=" + song.id + "&user_id=" + user_id
+                })
+                .success(function (res, status, headers, config) {
+                    return res.data;
+                })
+                .error(function (res, status, headers, config) {
+                    return res;
+                });
+        }
+
+        function unMarkFavourite(song, user_id) {
+            return $http({
+                    method: "GET",
+                    url: "http://mixtapeupload.net/webservices/del_single_favorite.php?song_id=" + song.id + "&user_id=" + user_id
                 })
                 .success(function (res, status, headers, config) {
                     return res.data;
@@ -83,6 +111,30 @@
             return $http({
                     method: "GET",
                     url: "http://mixtapeupload.net/webservices/register.php?email=" + email + "&password=" + password + "&cpassword=" + cpassword
+                })
+                .success(function (res, status, headers, config) {
+                    return res.data;
+                })
+                .error(function (res, status, headers, config) {
+                    return res;
+                });
+        }
+    }
+})();
+(function () {
+    "use strict";
+    angular.module('starter').factory('hotAlbums', hotAlbums);
+    hotAlbums.$inject = ['$http'];
+
+    function hotAlbums($http) {
+        return {
+            getHotAlbums: getHotAlbums
+        };
+
+        function getHotAlbums(page) {
+            return $http({
+                    method: "GET",
+                    url: "http://mixtapeupload.net/webservices/get_hot_songs.php?page=" + page
                 })
                 .success(function (res, status, headers, config) {
                     return res.data;

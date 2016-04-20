@@ -8,13 +8,31 @@
             <div class="item item-body">
                 <img class="full-image" ng-src="{{selectedAlbumVar.al_image_url}}">
                 <ion-list>
-                    <ion-item ng-repeat="song in selectedAlbumVar.songs" class="item-button-right" ng-click="playSong(song.song_url,$index)" style="padding-right: 10px;">
-                        <div>{{song.song_name}}<img src="img/arrows.png" style="float:right" /></div>
-
+                    <ion-item ng-repeat="song in selectedAlbumVar.songs" class="item-button-right" style="padding-right: 10px;">
+                        <div>
+                            <span ng-click="playSelectedSong(song,$index)">{{song.song_name}}</span>
+                            <button class="button button-icon" ng-show="song.star" ng-click="markFavourite(song)">
+                                <i class="icon ion-android-star"></i>
+                            </button>
+                            <button class="button button-icon" ng-show="!song.star" ng-click="unMarkFavourite(song)">
+                                <i class="icon ion-android-star-outline"></i>
+                            </button>
+                        </div>
                     </ion-item>
                 </ion-list>
             </div>
-
         </div>
     </ion-content>
+    <div style="position:fixed;left:0;right:0;bottom:0;height:50px;background-color:#714B4B;">
+        <div>
+            <img ng-src="{{selectedAlbumVar.al_image_url}}" style="width:50px; float:left;display:inline-block;">
+            <h5 style="color:#fff; float:left;display:inline-block;margin:0;padding: 18px 10px;">Hick Vich Jaan</h5>
+            <button ng-show="!togglePlayPause" class="button button-icon" ng-show="!song.star" ng-click="playSong(song)" style="padding: 4px 15px;float: right;color: red;">
+                <i class="icon ion-play"></i>
+            </button>
+            <button ng-show="togglePlayPause" class="button button-icon" ng-show="!song.star" ng-click="pauseSong(song)" style="padding: 4px 15px;float: right;color: #fff;">
+                <i class="icon ion-pause"></i>
+            </button>
+        </div>
+    </div>
 </ion-view>

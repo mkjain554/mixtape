@@ -42,26 +42,6 @@ angular.module('starter.controllers', ['ngLoadingSpinner', 'ngCordova'])
             });
         };
 
-
-        /*setTimeout(function () {
-    $("#jquery_jplayer_1").jPlayer({
-        ready: function (event) {
-            $(this).jPlayer("setMedia", {
-                title: "Bubble",
-                mp3: "http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3"
-            });
-        },
-        //swfPath: "../../dist/jplayer",
-        supplied: "m4a, oga",
-        wmode: "window",
-        useStateClassSkin: true,
-        autoBlur: false,
-        smoothPlayBar: true,
-        keyEnabled: true,
-        remainingDuration: true,
-        toggleDuration: true
-    });
-}, 0);*/
         setTimeout(function () {
             var windowHeight = $(window).height();
             var playerHeight = 140;
@@ -76,6 +56,30 @@ angular.module('starter.controllers', ['ngLoadingSpinner', 'ngCordova'])
             $scope.selectedAlbumVar = item;
             $rootScope.selectedAlbumVar = item;
         }
+    })
+    .controller('HotCtrl', function ($scope, $http, $rootScope, $state, hotAlbums) {
+        console.log("hotCtrl called");
+        $scope.pageNumber = 0;
+        $scope.hotAlbums = [];
+
+        function populateAlbums(page, callback) {
+            var promise = hotAlbums.getHotAlbums(page);
+            promise.then(function (response) {
+                if (response && response.data && response.data.data) {
+                    callback(response.data.data);
+                } else {
+                    $scope.noMoreItemsAvailable = true;
+                }
+            })
+        }
+        $scope.loadMore = function () {
+            $scope.pageNumber = $scope.pageNumber + 1;
+            populateAlbums($scope.pageNumber, function (data) {
+                $scope.hotAlbums = $scope.hotAlbums.concat(data);
+                $scope.$broadcast('scroll.infiniteScrollComplete');
+            });
+        };
+
     })
     .controller('NewMusicCtrl', function ($scope) {})
 
@@ -107,16 +111,48 @@ angular.module('starter.controllers', ['ngLoadingSpinner', 'ngCordova'])
                 $ionicLoading.hide();
             }
         }
+        $scope.pauseSong = function () {
+            $rootScope.currentPosition = $rootScope.media.getCurrentPosition();
+            $scope.togglePlayPause = !$scope.togglePlayPause;
+            $rootScope.media.pause();
+        }
+        $scope.playSelectedSong = function (song, index) {
+            $scope.selectedSong = song;
+            $scope.playSong(song.song_url, index);
+        }
         $scope.playSong = function (src, index) {
-            console.log("index.." + index);
-            if (index == 1) {
-                var src = "http://www.stephaniequinn.com/Music/Commercial%20DEMO%20-%2013.mp3";
-            } else {
-                console.log("src.." + src);
-                var src1 = src;
+            if ($rootScope && $rootScope.media) {
+                $rootScope.media.stop();
+                delete $rootScope.media;
+                delete $rootScope.currentPosition;
             }
-            var media = new Media(src, null, null, mediaStatusCallback);
-            media.play();
+            $scope.togglePlayPause = !$scope.togglePlayPause;
+            if (src) {
+                var media = new Media(src, null, null, mediaStatusCallback);
+                $rootScope.media = media;
+                media.play();
+            } else {
+
+                var media = new Media($scope.selectedSong.song_url, null, null, mediaStatusCallback);
+                $rootScope.media = media;
+                if ($rootScope.currentPosition) {
+                    $rootScope.media.seekTo($rootScope.currentPosition);
+                }
+                media.play();
+            }
+        }
+
+        $scope.markFavourite = function (song) {
+            var promise = albumDetail.markFavourite(song, $rootScope.user.id);
+            promise.then(function (response) {
+                console.log("response of markFavouirte.." + JSON.stringify(response));
+            })
+        }
+        $scope.unMarkFavourite = function (song) {
+            var promise = albumDetail.unMarkFavourite(song, $rootScope.user.id);
+            promise.then(function (response) {
+                console.log("response of unMarkFavouirte.." + JSON.stringify(response));
+            })
         }
     })
     .controller('CurrentSongCtrl', function ($scope, $rootScope, $ionicHistory) {
