@@ -29,8 +29,23 @@
         return {
             getAlbumDetail: getAlbumDetail,
             markFavourite: markFavourite,
-            unMarkFavourite: unMarkFavourite
+            unMarkFavourite: unMarkFavourite,
+            getSongFeedback: getSongFeedback
         };
+
+        function getSongFeedback(songid, user_id, score) {
+            return $http({
+                    method: "GET",
+                    url: "http://mixtapeupload.net/webservices/add_song_feedback.php?user_id=" + user_id + "&song_id=" + songid + "&score=" + score
+                })
+                .success(function (res, status, headers, config) {
+                    return res.data;
+                })
+                .error(function (res, status, headers, config) {
+                    return res;
+                });
+
+        }
 
         function getAlbumDetail(page, songid) {
 
@@ -99,6 +114,30 @@
 })();
 (function () {
     "use strict";
+    angular.module('starter').factory('favSongs', favSongs);
+    favSongs.$inject = ['$http'];
+
+    function favSongs($http) {
+        return {
+            getFavSongs: getFavSongs
+        };
+
+        function getFavSongs(user_id) {
+            return $http({
+                    method: "GET",
+                    url: "http://mixtapeupload.net/webservices/get_favorite_list.php?user_id=" + user_id
+                })
+                .success(function (res, status, headers, config) {
+                    return res.data;
+                })
+                .error(function (res, status, headers, config) {
+                    return res;
+                });
+        }
+    }
+})();
+(function () {
+    "use strict";
     angular.module('starter').factory('registerService', register);
     register.$inject = ['$http'];
 
@@ -110,7 +149,7 @@
         function register(email, password, cpassword) {
             return $http({
                     method: "GET",
-                    url: "http://mixtapeupload.net/webservices/register.php?email=" + email + "&password=" + password + "&cpassword=" + cpassword
+                    url: "http://mixtapeupload.net/webservices/register.php?email=" + email + "&password=" + password + "&rpassword=" + cpassword
                 })
                 .success(function (res, status, headers, config) {
                     return res.data;
@@ -145,7 +184,30 @@
         }
     }
 })();
+(function () {
+    "use strict";
+    angular.module('starter').factory('newAlbums', newAlbums);
+    newAlbums.$inject = ['$http'];
 
+    function newAlbums($http) {
+        return {
+            getNewAlbums: getNewAlbums
+        };
+
+        function getNewAlbums(page, type) {
+            return $http({
+                    method: "GET",
+                    url: "http://mixtapeupload.net/webservices/get_new_albums_list.php?page=" + page + "&type=" + type
+                })
+                .success(function (res, status, headers, config) {
+                    return res.data;
+                })
+                .error(function (res, status, headers, config) {
+                    return res;
+                });
+        }
+    }
+})();
 angular.module('starter.services', [])
     .service('UserService', function () {
         // For the purpose of this example I will store user data on ionic local storage but you should save it on a database

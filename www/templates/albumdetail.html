@@ -11,12 +11,13 @@
                     <ion-item ng-repeat="song in selectedAlbumVar.songs" class="item-button-right" style="padding-right: 10px;">
                         <div>
                             <span ng-click="playSelectedSong(song,$index)">{{song.song_name}}</span>
-                            <button class="button button-icon" ng-show="song.star" ng-click="markFavourite(song)">
+                            <button class="button button-icon" ng-show="song.star" ng-click="unMarkFavourite(song)">
                                 <i class="icon ion-android-star"></i>
                             </button>
-                            <button class="button button-icon" ng-show="!song.star" ng-click="unMarkFavourite(song)">
+                            <button class="button button-icon" ng-show="!song.star" ng-click="markFavourite(song)">
                                 <i class="icon ion-android-star-outline"></i>
                             </button>
+                            <ionic-ratings ratingsobj='ratingsObject' ng-click="setRating(song)"></ionic-ratings>
                         </div>
                     </ion-item>
                 </ion-list>

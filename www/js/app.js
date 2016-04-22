@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 var contentHeight = "";
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngAudio'])
+angular.module('starter', ['ionic', 'starter.services', 'ngAudio', 'ngLoadingSpinner', 'ngCordova', 'ionic-ratings'])
 
 .run(function ($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function () {
@@ -65,12 +65,30 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 }
             }
         })
+        .state('root.favouites', {
+            url: '/favouites',
+            views: {
+                'main-content': {
+                    templateUrl: 'templates/favsongs.html',
+                    controller: 'FavCtrl'
+                }
+            }
+        })
         .state('root.hot', {
             url: '/hot',
             views: {
                 'main-content': {
                     templateUrl: 'templates/tab-hot.html',
                     controller: 'HotCtrl'
+                }
+            }
+        })
+        .state('root.newMusic', {
+            url: '/newMusic',
+            views: {
+                'main-content': {
+                    templateUrl: 'templates/new-music.html',
+                    controller: 'NewMusicCtrl'
                 }
             }
         })

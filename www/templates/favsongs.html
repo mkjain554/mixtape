@@ -1,0 +1,17 @@
+<ion-view>
+    <ion-content class="padding marginTop" style="padding:10px 2px;" ng-init="loadFavSongs()" ng-class="{'has-header has-tabs-top': androidPlatform, 'has-header has-tabs': iosPlatform}" style="overflow-y:hidden;">
+        <ion-list>
+            <ion-item ng-repeat="song in allFavSongs" class="item-button-right" style="padding-right: 10px;">
+                <div>
+                    <span ng-click="playSelectedSong(song,$index)">{{song.song_name}}</span>
+                    <button class="button button-icon" ng-show="song.star" ng-click="unMarkFavourite(song)">
+                        <i class="icon ion-android-star"></i>
+                    </button>
+                    <button class="button button-icon" ng-show="!song.star" ng-click="markFavourite(song)">
+                        <i class="icon ion-android-star-outline"></i>
+                    </button>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

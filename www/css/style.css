@@ -398,3 +398,7 @@ platBtns:active {
 .fullImage.item-complex .item-content {
     padding: 0px;
 }
+
+.ionic_ratings .icon {
+    font-size: 50px;
+}

@@ -8,60 +8,15 @@
             </ion-list>
             <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
         </ion-scroll>
-
-        <!--<div id="player">
-    <div id="jquery_jplayer_1" class="jp-jplayer"></div>
-    <div id="jp_container_1" class="jp-audio " role="application " aria-label="media player ">
-        <div class="playingImage">
-            <img ng-src="{{selectedAlbumVar.al_image_url}}" alt="hello">
-        </div>
-        <div class="jp-type-single" style="height:auto;margin-top:0;">
-            <div class="jp-gui jp-interface ">
-                <div class="jp-progress">
-                    <div class="jp-seek-bar">
-                        <div class="jp-play-bar"></div>
-                    </div>
-                </div>
-                <div class="jp-time-holder">
-                    <div class="jp-current-time yellowColor" role="timer" aria-label="time">&nbsp;</div>
-                    <div class="jp-duration yellowColor" role="timer" aria-label="duration">&nbsp;</div>
-                </div>
-                <div class="jp-controls " style="padding:0px 45px;width:100%">
-                    <button class="jp-previous " role="button " tabindex="0 ">previous</button>
-                    <button class="jp-play " role="button " tabindex="0 ">play</button>
-                    <button class="jp-next " role="button " tabindex="0 ">next</button>
-                    <button class="jp-stop " role="button " tabindex="0 ">stop</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>-->
     </ion-content>
     <ion-tabs class="tabs-icon-top tabs-color-active-positive background">
         <!-- Videos Tab -->
         <ion-tab title="New Music " href="#/root/videos"></ion-tab>
         <!-- New Music Tab -->
-        <ion-tab title="Who's Hot" href="#/root/hot"></ion-tab>
+        <ion-tab title="Who's Hot" href="#/root/newMusic"></ion-tab>
         <!-- All Tab -->
         <ion-tab title="Hosted" href="#/root/videos"></ion-tab>
         <!-- Hosted Tab -->
         <ion-tab title="All" href="#/root/videos"></ion-tab>
     </ion-tabs>
 </ion-view>
-
-
-<!---->
-
-
-<!--style="background-image:url('{{image.src}}');width:50%;height:50%;" -->
-<!---->
-
-
-<!--<ion-scroll direction="y" style="height: calc(100% - 85px);">
-            
-            <a ng-click="selectedAlbum(album)" class="albums album-thumb" ng-repeat="album in albums" href="#/root/videos-single/{{album.id}}">
-                 
-                <img ng-src="{{album.al_image_url}}" alt="{{album.al_image_url}}" style="width:100%;height:100%;">
-            </a>
-</ion-scroll>
--->
