@@ -30,10 +30,10 @@
             getAlbumDetail: getAlbumDetail,
             markFavourite: markFavourite,
             unMarkFavourite: unMarkFavourite,
-            getSongFeedback: getSongFeedback
+            addSongFeedback: addSongFeedback
         };
 
-        function getSongFeedback(songid, user_id, score) {
+        function addSongFeedback(songid, user_id, score) {
             return $http({
                     method: "GET",
                     url: "http://mixtapeupload.net/webservices/add_song_feedback.php?user_id=" + user_id + "&song_id=" + songid + "&score=" + score

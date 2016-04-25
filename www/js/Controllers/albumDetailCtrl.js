@@ -9,6 +9,9 @@ angular.module('starter').controller('AlbumDetailCtrl', function ($scope, $state
     promise.then(function (response) {
         if (response && response.data && response.data.data) {
             $scope.selectedAlbumVar.songs = response.data.data;
+            for (var i = 0; i < $scope.selectedAlbumVar.songs.length; i++) {
+                $scope.selectedAlbumVar.songs[i].rating = 1;
+            }
         }
         console.log("$scope.selectedAlubmvar.." + JSON.stringify($scope.selectedAlbumVar));
     })
@@ -57,38 +60,34 @@ angular.module('starter').controller('AlbumDetailCtrl', function ($scope, $state
         var promise = albumDetail.markFavourite(song, $rootScope.user.id);
         promise.then(function (response) {
             console.log("response of markFavouirte.." + JSON.stringify(response));
+            for (var i = 0; i < $scope.selectedAlbumVar.songs.length; i++) {
+                if ($scope.selectedAlbumVar.songs[i].id == song.id) {
+                    $scope.selectedAlbumVar.songs[i].like = true;
+                }
+            }
         })
     }
     $scope.unMarkFavourite = function (song) {
         var promise = albumDetail.unMarkFavourite(song, $rootScope.user.id);
         promise.then(function (response) {
             console.log("response of unMarkFavouirte.." + JSON.stringify(response));
-        })
-    }
-    $scope.ratingArray = [];
-    $scope.currentSongRating;
-    $scope.ratingsObject = {
-        iconOn: 'ion-ios-star',
-        iconOff: 'ion-ios-star-outline',
-        iconOnColor: 'rgb(200, 200, 100)',
-        iconOffColor: 'rgb(200, 100, 100)',
-        rating: 0,
-        minRating: 1,
-        callback: function (rating) {
-            $scope.ratingsCallback(rating);
-            $scope.currentSongRating = rating;
-        }
-    };
-
-    $scope.setRating = function (song) {
-        $scope.ratingArray[song.id] = $scope.currentSongRating;
-        var promise = albumDetail.getSongFeedback(song.id, $rootScope.user.id, $scope.currentSongRating);
-        promise.then(function (response) {
-            if (response && response.data && response.data.data) {
-
+            for (var i = 0; i < $scope.selectedAlbumVar.songs.length; i++) {
+                if ($scope.selectedAlbumVar.songs[i].id == song.id) {
+                    $scope.selectedAlbumVar.songs[i].like = false;
+                }
             }
         })
     }
-
-    $scope.ratingsCallback = function (rating) {};
+    $scope.isReadonly = true;
+    $scope.rating2 = 5;
+    $scope.rateFunction = function (rating, songId) {
+        var promise = albumDetail.addSongFeedback(songId, $rootScope.user.id, rating);
+        promise.then(function (response) {
+            for (var i = 0; i < $scope.selectedAlbumVar.songs.length; i++) {
+                if ($scope.selectedAlbumVar.songs[i].id == songId) {
+                    $scope.selectedAlbumVar.songs[i].rating = rating;
+                }
+            }
+        });
+    };
 });
