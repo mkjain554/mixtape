@@ -1,10 +1,23 @@
-<!--
-  This template loads for the 'tab.friend-detail' state (app.js)
-  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
-  The FriendsCtrl pulls data from the Friends service (service.js)
-  The Friends service returns an array of friend data
--->
-<ion-view view-title="{{chat.name}}">
-    <ion-content class="padding">
+<ion-view>
+
+    <ion-content class="padding marginTop" style="padding:10px 2px;" ng-class="{'has-header has-tabs-top': androidPlatform, 'has-header has-tabs': iosPlatform}" style="overflow-y:hidden;">
+        <ion-scroll direction="y" style="height: calc(100% - 0px);">
+            <ion-list>
+                <ion-item ng-click="selectedAlbum(album)" class="albums fullImage album-thumb" ng-repeat="album in newAlbums" href="#/root/videos-single/{{album.id}}">
+                    <img ng-src="{{album.al_image_url}}" alt="{{album.al_image_url}}" style="width:100%;height:100%;">
+                </ion-item>
+            </ion-list>
+            <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
+        </ion-scroll>
     </ion-content>
+    <ion-tabs class="tabs-icon-top tabs-color-active-positive background">
+        <!-- Videos Tab -->
+        <ion-tab title="New Music " href="#/root/newMusic"></ion-tab>
+        <!-- New Music Tab -->
+        <ion-tab title="Who's Hot" href="#/root/hot"></ion-tab>
+        <!-- All Tab -->
+        <ion-tab title="Hosted" href="#/root/hostedMusic"></ion-tab>
+        <!-- Hosted Tab -->
+        <ion-tab title="All" href="#/root/videos"></ion-tab>
+    </ion-tabs>
 </ion-view>

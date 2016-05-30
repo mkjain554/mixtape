@@ -1,0 +1,36 @@
+<ion-view>
+    <ion-content class="padding marginTop">
+        <div class="list card">
+            <div class="item">
+                <h2>{{sAlbum.song_name}}</h2>
+            </div>
+
+            <div class="item item-body">
+                <img class="full-image" ng-src="http://www.mixtapeupload.net/admin/{{sAlbum.song_image_url}}">
+            </div>
+            <ion-list>
+                <ion-item>
+                    Artists : {{sAlbum.artists}}
+                </ion-item>
+                <ion-item>
+                    Music : {{sAlbum.music}}
+                </ion-item>
+                <ion-item>
+                    Lyrics : {{sAlbum.lyrics}}
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+    <div style="position:fixed;left:0;right:0;bottom:0;height:50px;background-color:#714B4B;">
+        <div>
+            <img ng-src="{{selectedAlbumVar.al_image_url}}" style="width:50px; float:left;display:inline-block;">
+            <h5 style="color:#fff; float:left;display:inline-block;margin:0;padding: 18px 10px;">{{sAlbum.song_name}}</h5>
+            <button ng-show="!togglePlayPause" class="button button-icon" ng-show="!song.star" ng-click="playSong(song)" style="padding: 4px 15px;float: right;color: red;">
+                <i class="icon ion-play"></i>
+            </button>
+            <button ng-show="togglePlayPause" class="button button-icon" ng-show="!song.star" ng-click="pauseSong(song)" style="padding: 4px 15px;float: right;color: #fff;">
+                <i class="icon ion-pause"></i>
+            </button>
+        </div>
+    </div>
+</ion-view>

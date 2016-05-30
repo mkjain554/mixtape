@@ -92,12 +92,40 @@ angular.module('starter', ['ionic', 'starter.services', 'ngAudio', 'ngLoadingSpi
                 }
             }
         })
+        .state('root.hosted', {
+            url: '/hostedMusic',
+            views: {
+                'main-content': {
+                    templateUrl: 'templates/tab-hosted.html',
+                    controller: 'HostedMusicCtrl'
+                }
+            }
+        })
         .state('root.videos-single', {
             url: '/videos-single/:id',
             views: {
                 'main-content': {
                     templateUrl: 'templates/albumdetail.html',
                     controller: 'AlbumDetailCtrl'
+                }
+            }
+        })
+        .state('root.hot-single', {
+            url: '/hot-single/:id',
+            views: {
+                'main-content': {
+                    templateUrl: 'templates/hotdetail.html',
+                    controller: 'HotCtrl'
+                }
+            }
+        })
+
+    .state('root.comingsoon', {
+            url: '/comingsoon',
+            views: {
+                'main-content': {
+                    templateUrl: 'templates/comingsoon.html',
+                    controller: 'ComingSoonCtrl'
                 }
             }
         })

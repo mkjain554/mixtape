@@ -1,4 +1,4 @@
-angular.module('starter').controller('NewMusicCtrl', function ($scope, $http, $rootScope, $state, newAlbums) {
+angular.module('starter').controller('ComingSoonCtrl', function ($scope, $http, $rootScope, $state, comingSoonSongs) {
 
     $scope.pageNumber = 0;
     $scope.newAlbums = [];
@@ -7,7 +7,7 @@ angular.module('starter').controller('NewMusicCtrl', function ($scope, $http, $r
     $scope.iosPlatform = ionic.Platform.isIOS();
 
     function populateAlbums(page, callback) {
-        var promise = newAlbums.getNewAlbums(page);
+        var promise = comingSoonSongs.getSongs(page);
         promise.then(function (response) {
             if (response && response.data && response.data.data) {
                 callback(response.data.data);

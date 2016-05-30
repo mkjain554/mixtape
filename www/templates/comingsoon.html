@@ -1,0 +1,17 @@
+<ion-view>
+
+    <ion-content class="padding marginTop has-header" style="padding:10px 2px;" style="overflow-y:hidden;">
+        <ion-header-bar style="background-color:#1A3866;" align-title="left" class="bar-dark">
+            <h1 class="title">Coming Soon</h1>
+        </ion-header-bar>
+        <ion-scroll direction="y" style="height: calc(100% - 0px);">
+            <ion-list>
+                <ion-item ng-click="selectedAlbum(album)" class="albums fullImage cs" ng-repeat="album in newAlbums">
+                    <img ng-src="{{album.img_url}}" alt="{{album.img_url}}" style="width:100%;height:100%;">
+                    <p style="margin-top:10px;font-size:20px;">{{album.title}}</p>
+                </ion-item>
+            </ion-list>
+            <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
+        </ion-scroll>
+    </ion-content>
+</ion-view>

@@ -426,3 +426,11 @@ platBtns:active {
 .star-rating.readonly .star.filled {
     color: #666;
 }
+
+.item.cs {
+    margin-top: 15px;
+}
+
+.item.cs:first-child {
+    margin-top: 45px;
+}

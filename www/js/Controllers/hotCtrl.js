@@ -4,7 +4,8 @@ angular.module('starter').controller('HotCtrl', function ($scope, $http, $rootSc
     $scope.hotAlbums = [];
 
     function populateAlbums(page, callback) {
-        var promise = hotAlbums.getHotAlbums(page);
+        var userid = $rootScope.user && $rootScope.user.id ? $rootScope.user.id : undefined;
+        var promise = hotAlbums.getHotAlbums(page, userid);
         promise.then(function (response) {
             if (response && response.data && response.data.data) {
                 callback(response.data.data);
@@ -20,5 +21,14 @@ angular.module('starter').controller('HotCtrl', function ($scope, $http, $rootSc
             $scope.$broadcast('scroll.infiniteScrollComplete');
         });
     };
+
+    $scope.selectedAlbum = function (albumid) {
+        for (var i = 0; i < $scope.hotAlbums.length; i++) {
+            if ($scope.hotAlbums[i].id == albumid.id.toString()) {
+                $rootScope.sAlbum = $scope.hotAlbums[i];
+            }
+        }
+    }
+
 
 });

@@ -1,11 +1,12 @@
 angular.module('starter').controller('AlbumDetailCtrl', function ($scope, $state, $rootScope, albumDetail, $cordovaMedia, $ionicLoading) {
     var albumid = $state.params.id;
-    for (var i = 0; i < $rootScope.allAlbums.length; i++) {
+/*    for (var i = 0; i < $rootScope.allAlbums.length; i++) {
         if ($rootScope.allAlbums[i].id == albumid) {
             $scope.selectedAlbumVar = $rootScope.allAlbums[i];
         }
-    }
-    var promise = albumDetail.getAlbumDetail(1, albumid);
+    }*/
+    var userid = $rootScope.user && $rootScope.user.id ? $rootScope.user.id : undefined;
+    var promise = albumDetail.getAlbumDetail(1, albumid, userid);
     promise.then(function (response) {
         if (response && response.data && response.data.data) {
             $scope.selectedAlbumVar.songs = response.data.data;
@@ -57,26 +58,51 @@ angular.module('starter').controller('AlbumDetailCtrl', function ($scope, $state
     }
 
     $scope.markFavourite = function (song) {
-        var promise = albumDetail.markFavourite(song, $rootScope.user.id);
-        promise.then(function (response) {
-            console.log("response of markFavouirte.." + JSON.stringify(response));
-            for (var i = 0; i < $scope.selectedAlbumVar.songs.length; i++) {
-                if ($scope.selectedAlbumVar.songs[i].id == song.id) {
-                    $scope.selectedAlbumVar.songs[i].like = true;
+        if ($rootScope.user && $rootScope.user.id) {
+            var promise = albumDetail.markFavourite(song, $rootScope.user.id);
+            promise.then(function (response) {
+                console.log("response of markFavouirte.." + JSON.stringify(response));
+                for (var i = 0; i < $scope.selectedAlbumVar.songs.length; i++) {
+                    if ($scope.selectedAlbumVar.songs[i].id == song.id) {
+                        $scope.selectedAlbumVar.songs[i].like = true;
+                    }
                 }
-            }
-        })
+            })
+        } else {
+            alert("Please Login to like this song");
+        }
     }
-    $scope.unMarkFavourite = function (song) {
-        var promise = albumDetail.unMarkFavourite(song, $rootScope.user.id);
-        promise.then(function (response) {
-            console.log("response of unMarkFavouirte.." + JSON.stringify(response));
-            for (var i = 0; i < $scope.selectedAlbumVar.songs.length; i++) {
-                if ($scope.selectedAlbumVar.songs[i].id == song.id) {
-                    $scope.selectedAlbumVar.songs[i].like = false;
+    $scope.likeSong = function (song) {
+        if ($rootScope.user && $rootScope.user.id) {
+            var promise = albumDetail.likeSong(song, $rootScope.user.id);
+            promise.then(function (response) {
+                console.log("response of markFavouirte.." + JSON.stringify(response));
+                for (var i = 0; i < $scope.selectedAlbumVar.songs.length; i++) {
+                    if ($scope.selectedAlbumVar.songs[i].id == song.id) {
+                        $scope.selectedAlbumVar.songs[i].like = true;
+                    }
                 }
-            }
-        })
+            })
+        } else {
+            alert("Please Login to like this song");
+        }
+    }
+
+    $scope.unMarkFavourite = function (song) {
+        if ($rootScope.user && $rootScope.user.id) {
+            var promise = albumDetail.unMarkFavourite(song, $rootScope.user.id);
+            promise.then(function (response) {
+                console.log("response of unMarkFavouirte.." + JSON.stringify(response));
+                for (var i = 0; i < $scope.selectedAlbumVar.songs.length; i++) {
+                    if ($scope.selectedAlbumVar.songs[i].id == song.id) {
+                        $scope.selectedAlbumVar.songs[i].like = false;
+                    }
+                }
+            })
+        } else {
+            alert("Please Login to like this song");
+        }
+
     }
     $scope.isReadonly = true;
     $scope.rating2 = 5;

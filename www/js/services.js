@@ -10,7 +10,7 @@
 
         function getAllAlbums(page, type) {
 
-            return $http.get("http://mixtapeupload.net/webservices/get_albums.php?page=" + page + "&type=" + type)
+            return $http.get("http://mixtapeupload.net/webservices/get_albums.php?page=" + page)
                 .success(function (res, status, headers, config) {
                     return res.data;
                 })
@@ -30,7 +30,8 @@
             getAlbumDetail: getAlbumDetail,
             markFavourite: markFavourite,
             unMarkFavourite: unMarkFavourite,
-            addSongFeedback: addSongFeedback
+            addSongFeedback: addSongFeedback,
+            likeSong: likeSong
         };
 
         function addSongFeedback(songid, user_id, score) {
@@ -47,11 +48,24 @@
 
         }
 
-        function getAlbumDetail(page, songid) {
+        function getAlbumDetail(page, songid, userid) {
 
             return $http({
                     method: "GET",
-                    url: "http://mixtapeupload.net/webservices/get_songs.php?page=" + page + "&al_id=" + songid
+                    url: "http://mixtapeupload.net/webservices/get_songs.php?page=" + page + "&al_id=" + songid + "&user_id=" + userid
+                })
+                .success(function (res, status, headers, config) {
+                    return res.data;
+                })
+                .error(function (res, status, headers, config) {
+                    return res;
+                });
+        }
+
+        function likeSong(song, user_id) {
+            return $http({
+                    method: "GET",
+                    url: "http://mixtapeupload.net/webservices/add_song_feedback.php?song_id=" + song.id + "&user_id=" + user_id
                 })
                 .success(function (res, status, headers, config) {
                     return res.data;
@@ -170,10 +184,10 @@
             getHotAlbums: getHotAlbums
         };
 
-        function getHotAlbums(page) {
+        function getHotAlbums(page, userid) {
             return $http({
                     method: "GET",
-                    url: "http://mixtapeupload.net/webservices/get_hot_songs.php?page=" + page
+                    url: "http://mixtapeupload.net/webservices/get_hot_songs.php?page=" + page + "&user_id=" + userid
                 })
                 .success(function (res, status, headers, config) {
                     return res.data;
@@ -197,7 +211,55 @@
         function getNewAlbums(page, type) {
             return $http({
                     method: "GET",
-                    url: "http://mixtapeupload.net/webservices/get_new_albums_list.php?page=" + page + "&type=" + type
+                    url: "http://mixtapeupload.net/webservices/get_new_albums_list.php?page=" + page
+                })
+                .success(function (res, status, headers, config) {
+                    return res.data;
+                })
+                .error(function (res, status, headers, config) {
+                    return res;
+                });
+        }
+    }
+})();
+(function () {
+    "use strict";
+    angular.module('starter').factory('hostedAlbums', hostedAlbums);
+    hostedAlbums.$inject = ['$http'];
+
+    function hostedAlbums($http) {
+        return {
+            getHostedAlbums: getHostedAlbums
+        };
+
+        function getHostedAlbums(page, type) {
+            return $http({
+                    method: "GET",
+                    url: "http://mixtapeupload.net/webservices/get_hosted_albums.php?page=" + page
+                })
+                .success(function (res, status, headers, config) {
+                    return res.data;
+                })
+                .error(function (res, status, headers, config) {
+                    return res;
+                });
+        }
+    }
+})();
+(function () {
+    "use strict";
+    angular.module('starter').factory('comingSoonSongs', comingSoonSongs);
+    comingSoonSongs.$inject = ['$http'];
+
+    function comingSoonSongs($http) {
+        return {
+            getSongs: getSongs
+        };
+
+        function getSongs(page) {
+            return $http({
+                    method: "GET",
+                    url: "http://mixtapeupload.net/webservices/get_coming_soon.php?page=" + page
                 })
                 .success(function (res, status, headers, config) {
                     return res.data;
