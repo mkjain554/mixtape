@@ -4,7 +4,7 @@ angular.module('starter').controller('HotCtrl', function ($scope, $http, $rootSc
     $scope.hotAlbums = [];
 
     function populateAlbums(page, callback) {
-        var userid = $rootScope.user && $rootScope.user.id ? $rootScope.user.id : undefined;
+        var userid = $rootScope.user && $rootScope.user.id ? $rootScope.user.id : '';
         var promise = hotAlbums.getHotAlbums(page, userid);
         promise.then(function (response) {
             if (response && response.data && response.data.data) {

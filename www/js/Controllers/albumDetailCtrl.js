@@ -1,11 +1,11 @@
 angular.module('starter').controller('AlbumDetailCtrl', function ($scope, $state, $rootScope, albumDetail, $cordovaMedia, $ionicLoading) {
     var albumid = $state.params.id;
-/*    for (var i = 0; i < $rootScope.allAlbums.length; i++) {
-        if ($rootScope.allAlbums[i].id == albumid) {
-            $scope.selectedAlbumVar = $rootScope.allAlbums[i];
-        }
-    }*/
-    var userid = $rootScope.user && $rootScope.user.id ? $rootScope.user.id : undefined;
+    /*    for (var i = 0; i < $rootScope.allAlbums.length; i++) {
+            if ($rootScope.allAlbums[i].id == albumid) {
+                $scope.selectedAlbumVar = $rootScope.allAlbums[i];
+            }
+        }*/
+    var userid = $rootScope.user && $rootScope.user.id ? $rootScope.user.id : '';
     var promise = albumDetail.getAlbumDetail(1, albumid, userid);
     promise.then(function (response) {
         if (response && response.data && response.data.data) {
@@ -116,4 +116,94 @@ angular.module('starter').controller('AlbumDetailCtrl', function ($scope, $state
             }
         });
     };
+
+
+    $scope.download = function (song) {
+        var song_url = song.song_url;
+        var songName = song_url.substring(song_url.lastIndexOf("/") + 1);
+        $ionicLoading.show({
+            template: 'Loading...'
+        });
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+                fs.root.getDirectory(
+                    "EP", {
+                        create: true
+                    },
+                    function (dirEntry) {
+                        dirEntry.getFile(
+                            songName, {
+                                create: true,
+                                exclusive: false
+                            },
+                            function gotFileEntry(fe) {
+                                var p = fe.toURL();
+                                fe.remove();
+                                ft = new FileTransfer();
+                                ft.download(
+                                    encodeURI(song_url),
+                                    p,
+                                    function (entry) {
+                                        $ionicLoading.hide();
+                                        console.log(entry.toURL());
+                                        //$scope.imgFile = entry.toURL();
+                                    },
+                                    function (error) {
+                                        alert(error);
+                                        $ionicLoading.hide();
+                                        alert("Download Error Source -> " + error.source);
+                                    },
+                                    false,
+                                    null
+                                );
+                            },
+                            function () {
+                                $ionicLoading.hide();
+                                console.log("Get file failed");
+                            }
+                        );
+                    }
+                );
+            },
+            function () {
+                $ionicLoading.hide();
+                console.log("Request for filesystem failed");
+            });
+    }
+    $scope.loadSong = function (song) {
+        var song_url = song.song_url;
+        var songName = song_url.substring(song_url.lastIndexOf("/") + 1);
+        $ionicLoading.show({
+            template: 'Loading...'
+        });
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+                fs.root.getDirectory(
+                    "EP", {
+                        create: false
+                    },
+                    function (dirEntry) {
+                        dirEntry.getFile(
+                            songName, {
+                                create: false,
+                                exclusive: false
+                            },
+                            function gotFileEntry(fe) {
+                                $ionicLoading.hide();
+                                $scope.playSong(fe.toURL());
+                                //$scope.imgFile = fe.toURL();
+                            },
+                            function (error) {
+                                $ionicLoading.hide();
+                                console.log("Error getting file");
+                                $scope.playSong();
+                            }
+                        );
+                    }
+                );
+            },
+            function () {
+                $ionicLoading.hide();
+                console.log("Error requesting filesystem");
+                $scope.playSong();
+            });
+    }
 });
